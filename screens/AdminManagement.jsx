@@ -14,7 +14,7 @@ import { TouchableOpacity } from "react-native";
 import axios from "axios";
 import { Avatar, Button, Card, Title, Paragraph } from "react-native-paper";
 
-export default function AdminHome() {
+export default function AdminHome({navigation}) {
   return (
     <View>
       <ScrollView>
@@ -32,7 +32,7 @@ export default function AdminHome() {
             }}
           />
           <Card.Actions>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button}onPress={() => navigation.navigate("ViewAdmins")}>
               <Text style={styles.buttonText}>View Admins</Text>
             </TouchableOpacity>
           </Card.Actions>
@@ -44,7 +44,7 @@ export default function AdminHome() {
             }}
           />
           <Card.Actions>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button}onPress={() => navigation.navigate("AddAdmin")}>
               <Text style={styles.buttonText}>Add Admins</Text>
             </TouchableOpacity>
           </Card.Actions>
@@ -56,7 +56,7 @@ export default function AdminHome() {
             }}
           />
           <Card.Actions>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button}onPress={() => navigation.navigate("ConfigAdmin")}>
               <Text style={styles.buttonText}>Edit/Remove Admins</Text>
             </TouchableOpacity>
           </Card.Actions>

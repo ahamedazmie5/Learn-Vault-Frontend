@@ -45,7 +45,7 @@ const SupplierList = ({ navigation }) => {
               <Card key={index}>
                 <Text>Name - {current.Fullname}</Text>
                 <Text>Email - {current.email}</Text>
-                <Text>Reg No - {current.regCode}</Text>
+                <Text>Admin ID - {current.regCode}</Text>
                 <Text>User Type - {current.userRole}</Text>
                 
               </Card>

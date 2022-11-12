@@ -1,17 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { Alert } from 'react-native';
 import { StyleSheet, Text, View, TextInput, Image, Button } from "react-native";
 import { TouchableOpacity } from "react-native";
+import { Alert } from 'react-native';
 import axios from "axios";
 export default function Signup({navigation}) {
-  const [userRole, setUserRole] = useState("User");
+  const [userRole, setUserRole] = useState("Admin");
   const [Fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [regCode, setRegCode] = useState("");
   const [password, setPassword] = useState("");
 
-  const registerUser = () => {
+  const AddAdmin = () => {
     const URL = `http://172.28.6.14:8000/user/signup`;
     const payload = {
       Fullname,
@@ -23,7 +23,7 @@ export default function Signup({navigation}) {
     axios
       .post(URL, payload)
       .then((res) => {
-        navigation.navigate("Login");
+        navigation.navigate("StudentManagement");
       })
       .catch((error) => {
         console.log(error);
@@ -37,7 +37,7 @@ export default function Signup({navigation}) {
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Add an Student</Text>
+      <Text style={styles.titulo}>Add an Admin</Text>
       <Image
         style={{ width: 250, height: 200 }}
         source={require("../assets/image1.png")}
@@ -59,12 +59,12 @@ export default function Signup({navigation}) {
         secureTextEntry={true}
       />
       <TextInput
-        placeholder="Registration Code"
+        placeholder="Admin ID"
         style={styles.textInput}
         onChangeText={(e) => setRegCode(e)}
       />
-      <TouchableOpacity style={styles.button} onPress={registerUser}>
-        <Text style={styles.buttonText}>Add Student</Text>
+      <TouchableOpacity style={styles.button} onPress={AddAdmin}>
+        <Text style={styles.buttonText}>Add Admin</Text>
       </TouchableOpacity>
 
       <StatusBar style="auto" />

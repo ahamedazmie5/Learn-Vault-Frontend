@@ -11,7 +11,7 @@ export default function Signup({navigation}) {
   const [password, setPassword] = useState("");
 
   const registerUser = () => {
-    const URL = `http://192.168.194.251:8000/user/signup`;
+    const URL = `http://172.28.6.14:8000/user/signup`;
     const payload = {
       Fullname,
       email,

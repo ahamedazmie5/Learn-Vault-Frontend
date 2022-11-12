@@ -3,26 +3,35 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput, Image, Button } from "react-native";
 import { TouchableOpacity } from "react-native";
 import axios from "axios";
-import AdminHome from "./AdminManagement";
 
-export default function Login({navigation}) {
+export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
 
   const login = async (e) => {
     e.preventDefault();
-    const URL = `http://192.168.194.251:8000/user/signin`;
+    const URL = `http://172.28.6.14:8000/user/signin`;
     axios
       .post(URL, { email: email, password: pwd })
       .then((res) => {
-        alert(res.data.userRole);
-        navigation.navigate("Home", {
-          userID: res.data.userId,
-          userRole: res.data.userRole,
-        });
+        // alert("Welcome User");
+        console.log(res.data.userRole);
+        if (res.data.userRole === "User") {
+          console.log(res.data.userRole);
+          navigation.navigate("StudentManagement", {
+            userID: res.data.userId,
+            userRole: res.data.userRole,
+          });
+        } else if (res.data.userRole === "Admin") {
+          navigation.navigate("AdminHome", {
+            userID: res.data.userId,
+            userRole: res.data.userRole,
+          });
+        }
       })
       .catch((error) => {
-        alert(error.message);
+        console.error(error);
+        alert("Invalid Credentials");
       });
   };
 
@@ -44,7 +53,7 @@ export default function Login({navigation}) {
         onChangeText={(e) => setPwd(e)}
         secureTextEntry={true}
       />
-      <TouchableOpacity style={styles.button} onPress={AdminHome}>
+      <TouchableOpacity style={styles.button} onPress={login}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
       <Text style={styles.subtitle}>Don't have an account ?</Text>

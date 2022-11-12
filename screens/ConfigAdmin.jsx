@@ -48,6 +48,9 @@ const SupplierList = ({ navigation }) => {
                 <Text>Reg No - {current.regCode}</Text>
                 <Text>User Type - {current.userRole}</Text>
                 
+                <TouchableOpacity style={styles.ConfigBtn} onPress={() => updateItem(item._id)}><Text style={styles.buttonText}>Update</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.ConfigBtn2} onPress={() => deleteItem(item._id)}><Text style={styles.buttonText}>Delete</Text></TouchableOpacity>
+                
               </Card>
             );
           })}
@@ -65,10 +68,24 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     alignItems: "center",
   },
-  logoutBtn: {
-    position: "absolute",
-    right: 10,
-    fontSize: 20,
-    fontWeight: "bold",
+  ConfigBtn: {
+    backgroundColor: "#6C0BA9",
+    width: "40%",
+    height: 40,
+    padding: 10,
+    borderRadius: 30,
+    marginTop: 20,
+  },
+  ConfigBtn2: {
+    backgroundColor: "black",
+    width: "40%",
+    height: 40,
+    padding: 10,
+    borderRadius: 30,
+    marginTop: 20,
+  },
+  buttonText: {
+    textAlign: "center",
+    color: "white",
   },
 });

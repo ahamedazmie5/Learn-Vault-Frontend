@@ -9,6 +9,10 @@ import AdminManagement from "./screens/AdminManagement";
 import StudentManagement from "./screens/StudentManagement";
 import AddStudents from "./screens/AddStudents";
 import ViewStudents from "./screens/ViewStudents";
+import ViewAdmins from "./screens/ViewAdmins";
+import AddAdmin from "./screens/AddAdmin";
+import ConfigStudents from "./screens/ConfigStudents";
+import ConfigAdmin from "./screens/ConfigAdmin";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -22,6 +26,10 @@ export default function App() {
         <Stack.Screen name="StudentManagement" component={StudentManagement} />
         <Stack.Screen name="AddStudents" component={AddStudents} />
         <Stack.Screen name="ViewStudents" component={ViewStudents} />
+        <Stack.Screen name="ViewAdmins" component={ViewAdmins} />
+        <Stack.Screen name="AddAdmin" component={AddAdmin} />
+        <Stack.Screen name="ConfigStudents" component={ConfigStudents} />
+        <Stack.Screen name="ConfigAdmin" component={ConfigAdmin} />
       </Stack.Navigator>
     </NavigationContainer>
   );
