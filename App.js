@@ -15,6 +15,13 @@ import ConfigStudents from "./screens/ConfigStudents";
 import ConfigAdmin from "./screens/ConfigAdmin";
 import AddCourse from "./screens/AddCourse";
 import AllCourse from "./screens/AllCourse";
+import StudentHomePage from "./screens/StudentHomePage";
+import CreateStudentAccount from "./screens/CreateStudentAccount";
+import UpdateStudentProfile from "./screens/UpdateStudentProfile";
+import SelectCourses from "./screens/SelectCourses";
+import ViewStudentDetails from "./screens/ViewStudentDetails";
+import SelectNewCourse from "./screens/SelectNewCourse";
+import CourseList from "./screens/CourseList";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -34,6 +41,22 @@ export default function App() {
         <Stack.Screen name="ConfigAdmin" component={ConfigAdmin} />
         <Stack.Screen name="AddCourse" component={AddCourse} />
         <Stack.Screen name="AllCourse" component={AllCourse} />
+        <Stack.Screen name="StudentHomePage" component={StudentHomePage} />
+        <Stack.Screen
+          name="CreateStudentAccount"
+          component={CreateStudentAccount}
+        />
+        <Stack.Screen
+          name="UpdateStudentProfile"
+          component={UpdateStudentProfile}
+        />
+        <Stack.Screen name="SelectCourses" component={SelectCourses} />
+        <Stack.Screen
+          name="ViewStudentDetails"
+          component={ViewStudentDetails}
+        />
+        <Stack.Screen name="SelectNewCourse" component={SelectNewCourse} />
+        <Stack.Screen name="CourseList" component={CourseList} />
       </Stack.Navigator>
     </NavigationContainer>
   );

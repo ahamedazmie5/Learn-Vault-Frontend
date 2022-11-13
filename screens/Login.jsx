@@ -18,7 +18,7 @@ export default function Login({ navigation }) {
         console.log(res.data.userRole);
         if (res.data.userRole === "User") {
           console.log(res.data.userRole);
-          navigation.navigate("StudentManagement", {
+          navigation.navigate("StudentHomePage", {
             userID: res.data.userId,
             userRole: res.data.userRole,
           });
