@@ -13,6 +13,8 @@ import ViewAdmins from "./screens/ViewAdmins";
 import AddAdmin from "./screens/AddAdmin";
 import ConfigStudents from "./screens/ConfigStudents";
 import ConfigAdmin from "./screens/ConfigAdmin";
+import AddCourse from "./screens/AddCourse";
+import AllCourse from "./screens/AllCourse";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -30,6 +32,8 @@ export default function App() {
         <Stack.Screen name="AddAdmin" component={AddAdmin} />
         <Stack.Screen name="ConfigStudents" component={ConfigStudents} />
         <Stack.Screen name="ConfigAdmin" component={ConfigAdmin} />
+        <Stack.Screen name="AddCourse" component={AddCourse} />
+        <Stack.Screen name="AllCourse" component={AllCourse} />
       </Stack.Navigator>
     </NavigationContainer>
   );

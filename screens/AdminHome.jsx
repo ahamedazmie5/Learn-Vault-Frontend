@@ -56,7 +56,7 @@ export default function AdminHome({ navigation }) {
             }}
           />
           <Card.Actions>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button}onPress={() => navigation.navigate("AllCourse")}>
               <Text style={styles.buttonText}>Course Management</Text>
             </TouchableOpacity>
           </Card.Actions>
